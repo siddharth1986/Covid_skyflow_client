@@ -1,0 +1,107 @@
+<kt-portlet>
+	<kt-portlet-header [title]="'Vax Check ETL Result page'" [class]="'card-head-lg'">
+		<ng-container ktPortletTools>
+			<h6>HealthCert-PCR</h6>
+		</ng-container>
+	</kt-portlet-header>
+
+	<!-- <kt-portlet-header [title]="'SWAB Test Result'" [class]="'card-head-lg'">
+		<ng-container ktPortletTools>
+			<h6>HealthCert-PCR</h6>
+		</ng-container>
+	</kt-portlet-header> -->
+
+	<kt-portlet-body>
+		<p-tabView >
+			<p-tabPanel>
+				<ng-template pTemplate = "header">
+					<span>Batch Monitoring</span> &nbsp;
+					<p-tag styleClass="p-mr-2 activeTag" value="1"></p-tag>
+				</ng-template>
+				<p-table #dt1  [columns]="cols" [value]="batches" sortMode="multiple" 
+				[rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50,100]" styleClass="p-datatable-sm"
+				[rowHover]="true" [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+				[globalFilterFields]="['courseCode','courseName','lastUpdated']"
+				(onRowSelect)="editUser($event)">
+				<ng-template pTemplate="header" let-columns>
+					<tr>
+						<th [pSortableColumn]="col.field" *ngFor="let col of columns" [ngStyle]="{'text-align': col.textAlign, 'width': col.width}">
+							{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+						</th>
+						<th style="width: 4rem;"></th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-course>
+					<tr>
+						<td>{{course.loadPlanName}}</td>
+						<td>{{course.loadPlanInstance}}</td>
+						<td style="text-align: center;">{{course.lpStartDate}}</td>
+						<td style="text-align: center;">{{course.lpEndDate}}</td>
+						<td style="text-align: center;"><p-tag [styleClass]="course.lpStatus === 'Done' ? 'p-mr-2 doneTag' : 'p-mr-2 errorTag'" [value]="course.lpStatus"></p-tag></td>
+						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.lpDuration}}</td>
+						<td><button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded"></button>
+							<!-- <button pButton type="button" class="p-button-secondary" icon="pi pi-refresh"></button> -->
+						</td>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="emptymessage">
+					<tr>
+						<td colspan="6">No batches found.</td>
+					</tr>
+				</ng-template>
+			</p-table>  
+			</p-tabPanel>
+			<p-tabPanel header="Data Sources">
+				<ng-template pTemplate = "header">
+					<span>Data Sources</span> &nbsp;
+					<p-tag styleClass="p-mr-2 activeTag" value="3"></p-tag>
+				</ng-template>
+				<p-table #dt1  [columns]="dsCols" [value]="dataSources" sortMode="multiple" 
+				[rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50,100]" styleClass="p-datatable-sm"
+				[rowHover]="true" [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+				[globalFilterFields]="['courseCode','courseName','lastUpdated']"
+				(onRowSelect)="editUser($event)">
+				<ng-template pTemplate="header" let-columns>
+					<tr>
+						<th [pSortableColumn]="col.field" *ngFor="let col of columns" [ngStyle]="{'text-align': col.textAlign, 'width': col.width}">
+							{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+						</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-course>
+					<tr>
+						<td>{{course.name}}</td>
+						<td>{{course.location}}</td>
+						<td>{{course.frequency}}</td>
+						<td>{{course.noOfRecords}}</td>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="emptymessage">
+					<tr>
+						<td colspan="4">No batches found.</td>
+					</tr>
+				</ng-template>
+			</p-table>  
+			</p-tabPanel>
+			<p-tabPanel header="History & Lookup">
+				<ng-template pTemplate = "header">
+					<span>History & Lookup</span> &nbsp;
+					<p-tag styleClass="p-mr-2 inActiveTag" value="0"></p-tag>
+				</ng-template>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+					cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+					Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>   
+			</p-tabPanel>
+			<p-tabPanel header="Generate Report">
+				<ng-template pTemplate = "header">
+					<span>Generate Report</span> &nbsp;
+					<!-- <p-tag styleClass="p-mr-2 inActiveTag" value="0"></p-tag> -->
+					<!-- <i class="pi pi-file-excel"></i> -->
+				</ng-template>
+				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+					cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
+					Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>   
+			</p-tabPanel>
+		</p-tabView>
+	</kt-portlet-body>
+</kt-portlet>

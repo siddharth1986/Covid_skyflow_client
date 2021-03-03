@@ -1,0 +1,13 @@
+:host {
+	::ng-deep {
+		ngb-tabset > .nav-tabs {
+			display: none;
+		}
+	}
+}
+
+#chart {
+	// max-width: 650px;
+	// margin: 35px auto;
+  }
+  

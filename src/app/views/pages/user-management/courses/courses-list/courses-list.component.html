@@ -1,0 +1,55 @@
+<kt-portlet>
+	<!-- PORTLET LOADING | Binded to TABLE Datasource -->
+	<!-- See prop => '~/core/_crud/models/data-sources/_base.datasource.ts' (loading$) -->
+	<kt-portlet-header [title]="'Immunization Courses list'" [class]="'card-head-lg'">
+		<ng-container ktPortletTools>
+			<!-- <button [routerLink]="['../users/add']" mat-raised-button color="primary" matTooltip="Create new User">New user</button> -->
+			<div class="p-d-flex">
+                <span class="p-input-icon-left p-ml-auto">
+                    <i class="pi pi-search" style="left: -1.5rem;"></i>
+                    <input pInputText type="text" (input)="dt1.filterGlobal($event.target.value, 'contains')" placeholder="Search" />
+                </span>
+            </div>
+		</ng-container> 
+	</kt-portlet-header>
+	<!-- end::Header -->
+
+	<!-- start::Body (attribute: ktPortletBody) -->
+	<kt-portlet-body>
+		<!-- start::FILTERS & GROUP ACTIONS -->
+		
+		<!-- <div class="card"> -->
+			<p-table #dt1  [columns]="cols" [value]="courses" sortMode="multiple" selectionMode="single" [(selection)]="selectedCourse"
+				[rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50,100]" styleClass="p-datatable-sm"
+				[rowHover]="true" [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+				[globalFilterFields]="['courseCode','courseName','lastUpdated']"
+				(onRowSelect)="editUser($event)">
+				<ng-template pTemplate="header" let-columns>
+					<tr>
+						<th [pSortableColumn]="col.field" *ngFor="let col of columns" [ngStyle]="{'text-align': col.textAlign, 'width': col.width}">
+							{{col.header}} <p-sortIcon [field]="col.field"></p-sortIcon>
+						</th>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="body" let-course>
+					<tr [pSelectableRow]="course">
+						<td>{{course.coursesCode}}</td>
+						<td>{{course.coursesName}}</td>
+						<td style="text-align: center;"><p-tag [styleClass]="course.pendingActions > 0 ? 'p-mr-2 activeTag' : 'p-mr-2 inActiveTag'" [value]="course.pendingActions"></p-tag></td>
+						<td style="text-align: center;"><p-tag [styleClass]="course.totalIssued > 0 ? 'p-mr-2 activeTag' : 'p-mr-2 inActiveTag'" [value]="course.totalIssued"></p-tag></td>
+						<!-- <td><p-badge [value]="course.totalIssued" styleClass="p-mr-2"></p-badge></td> -->
+						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.lastUpdated}}</td>
+					</tr>
+				</ng-template>
+				<ng-template pTemplate="emptymessage">
+					<tr>
+						<td colspan="5">No courses found.</td>
+					</tr>
+				</ng-template>
+			</p-table>
+		<!-- </div> -->
+		
+		<!-- end: BOTTOM -->
+	</kt-portlet-body>
+	<!-- end::Body -->
+</kt-portlet>

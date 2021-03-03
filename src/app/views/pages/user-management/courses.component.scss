@@ -1,0 +1,24 @@
+.inActiveTag {
+	background: #c0c1c1 !important;
+	color: gray !important;
+}
+
+.activeTag {
+	// background: #c0c1c1;
+	// color: gray;
+}
+
+// :host ::ng-deep .tabview-custom { i, span { vertical-align: middle; } span { margin: 0 .5rem; }
+// } :host ::ng-deep .p-button { margin-right: .25rem;
+// } :host ::ng-deep .p-tabview p { line-height: 1.5; margin: 0;
+// }
+
+.doneTag {
+	background: #9deb96 !important;
+	color: black !important;
+}
+
+.errorTag {
+	background: #ff9696;
+	color: black;
+}

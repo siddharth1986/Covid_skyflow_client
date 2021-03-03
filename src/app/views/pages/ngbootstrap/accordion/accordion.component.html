@@ -1,0 +1,175 @@
+<div class="card">
+    <!-- <p-toast></p-toast> -->
+    <p-steps [model]="items"></p-steps>
+</div>
+<router-outlet></router-outlet>
+
+<div class="card">
+    <!-- <h5>Advanced</h5> -->
+    <!-- <div class="p-fluid p-formgrid p-grid">
+        <div class="p-field p-col-12 p-md-4">
+            <label for="firstname6">Extract type</label>
+            <p-dropdown inputId="state" [options]="extract_item" [(ngModel)]="selectedExtractType"></p-dropdown>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Recipient ID</label>
+            <input id="lastname6" type="text" pInputText> 
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Ethnicity</label>
+            <p-dropdown inputId="state" [options]="ethnicity_item" [(ngModel)]="selectedEthnicity"></p-dropdown>
+		</div>
+		
+		<div class="p-field p-col-12 p-md-4">
+            <label for="firstname6">First name</label>
+            <input id="firstname6" type="text" pInputText> 
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Middle name</label>
+            <input id="lastname6" type="text" pInputText> 
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Last name</label>
+            <input id="lastname6" type="text" pInputText> 
+		</div>
+		
+		<div class="p-field p-col-12 p-md-4">
+            <label for="firstname6">Address street 1</label>
+            <input id="firstname6" type="text" pInputText> 
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Address street 2</label>
+            <input id="lastname6" type="text" pInputText> 
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Zip code</label>
+            <p-inputMask formControlName="zip" mask="99999?99999" maxlength="10" pattern></p-inputMask>
+		</div>
+
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">Country</label>
+			<p-dropdown inputId="state" [options]="country_item" [(ngModel)]="selectedCountry" placeholder="Select Country"></p-dropdown>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">State</label>
+			<p-dropdown inputId="state" [options]="state_item" [(ngModel)]="selectedState" placeholder="Select State"></p-dropdown>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">City</label>
+            <p-dropdown inputId="state" [options]="city_item" [(ngModel)]="selectedCity" placeholder="Select City"></p-dropdown>
+		</div>
+		
+		<div class="p-field p-col-12 p-md-4">
+            <label for="firstname6">Date of birth</label>
+            <p-calendar [showIcon]="true" inputId="icon" dateFormat="yy-mm-dd"></p-calendar>
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Sex</label>
+            <p-selectButton [options]="sex_item" [(ngModel)]="selectedSex" ></p-selectButton>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Race</label>
+            <p-multiSelect [options]="race_item" [(ngModel)]="selectedRace" defaultLabel="Select race" display="chip"></p-multiSelect>
+		</div> -->
+		<!-- <div class="p-fluid p-formgrid p-grid">
+			<div class="p-field p-col-12 p-md-4">
+				<label for="firstname6">Vaccination Event ID</label>
+				<p-dropdown inputId="state" [options]="extract_item" [(ngModel)]="selectedExtractType"></p-dropdown>
+			</div>
+			<div class="p-field p-col-12 p-md-4">
+				<label for="lastname6">Administration Date</label>
+				<p-calendar [showIcon]="true" inputId="icon" dateFormat="yy-mm-dd"></p-calendar>
+			</div>
+			<div class="p-field p-col-12 p-md-4">
+				<label for="lastname6">CVX</label>
+				<p-dropdown inputId="state" [options]="cvx_item" [(ngModel)]="selectedCVX" placeholder="Select CVX"></p-dropdown>
+			</div>
+			
+			<div class="p-field p-col-12 p-md-4">
+				<label for="firstname6">NDC</label>
+				<p-dropdown inputId="state" [options]="ndc_item" [(ngModel)]="selectedNDC" placeholder="Select NDC"></p-dropdown>
+			</div>
+			<div class="p-field p-col-12 p-md-4">
+				<label for="lastname6">Lot Number</label>
+				<input id="lastname6" type="text" pInputText> 
+			</div>
+			<div class="p-field p-col-12 p-md-4">
+				<label for="lastname6">Vaccine Expiry Date</label>
+				<p-calendar [showIcon]="true" inputId="icon" dateFormat="yy-mm-dd"></p-calendar>
+			</div>
+			
+			<div class="p-field p-col-12 p-md-4">
+				<label for="firstname6">Vaccine Administrating Site</label>
+				<p-dropdown inputId="state" [options]="site_item" [(ngModel)]="selectedSite" placeholder="Select site"></p-dropdown>
+			</div>
+			<div class="p-field p-col-12 p-md-4">
+				<label for="lastname6">Vaccine Series Complete</label>
+				<p-selectButton [options]="series_item" [(ngModel)]="selectedSeries" ></p-selectButton>
+			</div>
+			<div class="p-field p-col-12 p-md-4">
+				<label for="lastname6">Respoinsible Organization</label>
+				<input id="lastname6" type="text" pInputText>
+			</div>
+	</div> -->
+	
+	<div class="p-fluid p-formgrid p-grid">
+		<div class="p-field p-col-12 p-md-4">
+			<label for="firstname6"> Administered Name</label>
+			<input id="lastname6" type="text" pInputText>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">VTrckS provider PIN</label>
+			<input id="lastname6" type="text" pInputText>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">Location type</label>
+			<p-dropdown inputId="state" [options]="location_item" [(ngModel)]="selectedLocation" placeholder="Select location type"></p-dropdown>
+		</div>
+		
+		<div class="p-field p-col-12 p-md-4">
+            <label for="firstname6">Address street 1</label>
+            <input id="firstname6" type="text" pInputText> 
+        </div>
+        <div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Address street 2</label>
+            <input id="lastname6" type="text" pInputText> 
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">Zip code</label>
+            <p-inputMask formControlName="zip" mask="99999?99999" maxlength="10" pattern></p-inputMask>
+		</div>
+
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">Country</label>
+			<p-dropdown inputId="state" [options]="country_item" [(ngModel)]="selectedCountry" placeholder="Select Country"></p-dropdown>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">State</label>
+			<p-dropdown inputId="state" [options]="state_item" [(ngModel)]="selectedState" placeholder="Select State"></p-dropdown>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+            <label for="lastname6">City</label>
+            <p-dropdown inputId="state" [options]="city_item" [(ngModel)]="selectedCity" placeholder="Select City"></p-dropdown>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">Vaccine provider suffix</label>
+			<p-dropdown inputId="state" [options]="provider_item" [(ngModel)]="selectedProvider" placeholder="Select Provider Suffix"></p-dropdown>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6"> Vaccination refusal</label>
+			<p-selectButton [options]="refusal_item" [(ngModel)]="selectedRefusal" ></p-selectButton>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6"> Comorbidity status</label>
+			<p-selectButton [options]="comorbidity_item" [(ngModel)]="selectedComorbidity" ></p-selectButton>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">Missed vaccination appointment</label>
+			<p-selectButton [options]="missed_item" [(ngModel)]="selectedMissed" ></p-selectButton>
+		</div>
+		<div class="p-field p-col-12 p-md-4">
+			<label for="lastname6">Serology result</label>
+			<p-selectButton [options]="serology_item" [(ngModel)]="selectedSerology" ></p-selectButton>
+		</div>
+</div>
+</div>

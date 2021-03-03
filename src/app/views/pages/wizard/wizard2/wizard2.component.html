@@ -1,0 +1,382 @@
+<kt-portlet>
+	<kt-portlet-body>
+
+		<!--begin: Wizard -->
+		<div #wizard class="wizard wizard-2" id="kt_wizard_v2" data-wizard-state="step-first">
+			<div class="wizard-nav border-right py-8 px-8 py-lg-20 px-lg-10">
+				<!--begin: Form Wizard Nav -->
+				<div class="wizard-steps">
+					<a class="wizard-step" href="javascript:;" data-wizard-type="step" data-wizard-state="current">
+						<div class="wizard-wrapper">
+							<div class="wizard-icon">
+								<span class="svg-icon svg-icon-3x" [inlineSVG]="'assets/media/svg/icons/General/User.svg'"></span>
+							</div>
+							<div class="wizard-label">
+								<div class="wizard-title">
+									Recipient Detail
+								</div>
+								<div class="wizard-desc">
+									Enter vaccine recipient detail
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="wizard-step" href="javascript:;" data-wizard-type="step">
+						<div class="wizard-wrapper">
+							<div class="wizard-icon">
+								<span class="svg-icon svg-icon-3x" [inlineSVG]="'assets/media/svg/icons/Map/Compass.svg'"></span>
+							</div>
+							<div class="wizard-label">
+								<div class="wizard-title">
+									Vaccine Detail
+								</div>
+								<div class="wizard-desc">
+									Enter vaccine details
+								</div>
+							</div>
+						</div>
+					</a>
+					<a class="wizard-step" href="javascript:;" data-wizard-type="step">
+						<div class="wizard-wrapper">
+							<div class="wizard-icon">
+								<span class="svg-icon svg-icon-3x" [inlineSVG]="'assets/media/svg/icons/General/Thunder-move.svg'"></span>
+							</div>
+							<div class="wizard-label">
+								<div class="wizard-title">
+									Administration Detail
+								</div>
+								<div class="wizard-desc">
+									Enter administration detail
+								</div>
+							</div>
+						</div>
+					</a>
+				</div>
+				<!--end: Form Wizard Nav -->
+
+			</div>
+			<div class="wizard-body py-8 px-8 py-lg-20 px-lg-10">
+				<!--begin: Wizard Form-->
+				<div class="">
+					<div class="offset-xxl-12">
+						<!--begin: Form Wizard Form-->
+						<form class="form" id="kt_form">
+							<!--begin: Form Wizard Step 1-->
+							<div class="pb-5" data-wizard-type="step-content" data-wizard-state="current">
+								<h4 class="mb-10 font-weight-bold text-dark">Enter Recipient Details</h4>
+								<div class="kt-form__section kt-form__section--first">
+									<!-- <div class="kt-wizard-v2__form">
+										<div class="form-group">
+											<label>First Name</label>
+											<input type="text" class="form-control" name="fname" [(ngModel)]="model.fname" placeholder="First Name" value="John">
+											<span class="form-text text-muted">Please enter your first name.</span>
+										</div>
+										<div class="form-group">
+											<label>Last Name</label>
+											<input type="text" class="form-control" name="lname" [(ngModel)]="model.lname" placeholder="Last Name" value="Wick">
+											<span class="form-text text-muted">Please enter your last name.</span>
+										</div>
+										<div class="row">
+											<div class="col-xl-6">
+												<div class="form-group">
+													<label>Phone</label>
+													<input type="tel" class="form-control" name="phone" [(ngModel)]="model.phone" placeholder="phone" value="+61412345678">
+													<span class="form-text text-muted">Please enter your phone number.</span>
+												</div>
+											</div>
+											<div class="col-xl-6">
+												<div class="form-group">
+													<label>Email</label>
+													<input type="email" class="form-control" name="email" [(ngModel)]="model.email" placeholder="Email" value="john.wick@reeves.com">
+													<span class="form-text text-muted">Please enter your email address.</span>
+												</div>
+											</div>
+										</div>
+
+									</div> -->
+									<div class="p-fluid p-formgrid p-grid">
+										<div class="p-field p-col-12 p-md-4">
+											<label for="firstname6">Extract type</label>
+											<p-dropdown inputId="state" [options]="extract_item"  class="p-inputtext-sm" [(ngModel)]="selectedExtractType" [ngModelOptions]="{standalone: true}"></p-dropdown>
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Recipient ID</label>
+											<input id="lastname6" type="text" pInputText class="p-inputtext-sm"> 
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Ethnicity</label>
+											<p-dropdown inputId="state" [options]="ethnicity_item" class="p-inputtext-sm" [(ngModel)]="selectedEthnicity" [ngModelOptions]="{standalone: true}"></p-dropdown>
+										</div>
+										
+										<div class="p-field p-col-12 p-md-4">
+											<label for="firstname6">First name</label>
+											<input id="firstname6" type="text" pInputText  class="p-inputtext-sm"> 
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Middle name</label>
+											<input id="lastname6" type="text" pInputText class="p-inputtext-sm"> 
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Last name</label>
+											<input id="lastname6" type="text" pInputText class="p-inputtext-sm"> 
+										</div>
+										
+										<div class="p-field p-col-12 p-md-4">
+											<label for="firstname6">Address street 1</label>
+											<input id="firstname6" type="text" pInputText class="p-inputtext-sm"> 
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Address street 2</label>
+											<input id="lastname6" type="text" pInputText class="p-inputtext-sm"> 
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Zip code</label>
+											<p-inputMask mask="99999?99999" maxlength="10" pattern class="p-inputtext-sm"></p-inputMask>
+										</div>
+								
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Country</label>
+											<p-dropdown inputId="state" [options]="country_item" class="p-inputtext-sm" [(ngModel)]="selectedCountry" [ngModelOptions]="{standalone: true}" placeholder="Select Country"></p-dropdown>
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">State</label>
+											<p-dropdown inputId="state" [options]="state_item" class="p-inputtext-sm" [(ngModel)]="selectedState" [ngModelOptions]="{standalone: true}" placeholder="Select State"></p-dropdown>
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">City</label>
+											<p-dropdown inputId="state" [options]="city_item" class="p-inputtext-sm" [(ngModel)]="selectedCity" [ngModelOptions]="{standalone: true}" placeholder="Select City"></p-dropdown>
+										</div>
+										
+										<div class="p-field p-col-12 p-md-4">
+											<label for="firstname6">Date of birth</label>
+											<p-calendar [showIcon]="true" inputId="icon" dateFormat="yy-mm-dd" class="p-inputtext-sm"></p-calendar>
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Sex</label>
+											<p-selectButton [options]="sex_item" [(ngModel)]="selectedSex" class="p-inputtext-sm" [ngModelOptions]="{standalone: true}"></p-selectButton>
+										</div>
+										<div class="p-field p-col-12 p-md-4">
+											<label for="lastname6">Race</label>
+											<p-multiSelect [options]="race_item" [(ngModel)]="selectedRace" class="p-inputtext-sm" [ngModelOptions]="{standalone: true}" defaultLabel="Select race" display="chip"></p-multiSelect>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!--end: Form Wizard Step 1-->
+
+							<!--begin: Form Wizard Step 2-->
+							<div class="pb-5" data-wizard-type="step-content">
+								<h4 class="mb-10 font-weight-bold text-dark">Enter Vaccine Detail</h4>
+								<!-- <div class="row">
+									<div class="col-xl-6">
+										<div class="form-group">
+											<label>Address Line 1</label>
+											<input type="text" class="form-control" name="address1" [(ngModel)]="model.address1" placeholder="Address Line 1" value="Address Line 1">
+											<span class="form-text text-muted">Please enter your Address.</span>
+										</div>
+									</div>
+									<div class="col-xl-6">
+										<div class="form-group">
+											<label>Address Line 2</label>
+											<input type="text" class="form-control" name="address2" [(ngModel)]="model.address2" placeholder="Address Line 2" value="Address Line 2">
+											<span class="form-text text-muted">Please enter your Address.</span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xl-6">
+										<div class="form-group">
+											<label>Postcode</label>
+											<input type="text" class="form-control" name="postcode" [(ngModel)]="model.postcode" placeholder="Postcode" value="3000">
+											<span class="form-text text-muted">Please enter your Postcode.</span>
+										</div>
+									</div>
+									<div class="col-xl-6">
+										<div class="form-group">
+											<label>City</label>
+											<input type="text" class="form-control" name="city" [(ngModel)]="model.city" placeholder="City" value="Melbourne">
+											<span class="form-text text-muted">Please enter your City.</span>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xl-6">
+										<div class="form-group">
+											<label>State</label>
+											<input type="text" class="form-control" name="state" [(ngModel)]="model.state" placeholder="State" value="VIC">
+											<span class="form-text text-muted">Please enter your Postcode.</span>
+										</div>
+									</div>
+									<div class="col-xl-6">
+										<div class="form-group">
+											<label>Country:</label>
+											<select name="country" [(ngModel)]="model.country" class="form-control">
+												<option value="">Select</option>
+												<option value="AF">Afghanistan</option>
+												<option value="AX">Åland Islands</option>
+											</select>
+										</div>
+									</div>
+								</div> -->
+								<div class="p-fluid p-formgrid p-grid">
+									<div class="p-field p-col-12 p-md-4">
+										<label for="firstname6">Vaccination Event ID</label>
+										<p-dropdown inputId="state" [options]="extract_item" class="p-inputtext-sm" [(ngModel)]="selectedExtractType" [ngModelOptions]="{standalone: true}"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Administration Date</label>
+										<p-calendar [showIcon]="true" inputId="icon" class="p-inputtext-sm" dateFormat="yy-mm-dd"></p-calendar>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">CVX</label>
+										<p-dropdown inputId="state" [options]="cvx_item" class="p-inputtext-sm" [(ngModel)]="selectedCVX" [ngModelOptions]="{standalone: true}" placeholder="Select CVX"></p-dropdown>
+									</div>
+									
+									<div class="p-field p-col-12 p-md-4">
+										<label for="firstname6">NDC</label>
+										<p-dropdown inputId="state" [options]="ndc_item" class="p-inputtext-sm" [(ngModel)]="selectedNDC" [ngModelOptions]="{standalone: true}" placeholder="Select NDC"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Lot Number</label>
+										<input id="lastname6" type="text" pInputText class="p-inputtext-sm"> 
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Vaccine Expiry Date</label>
+										<p-calendar [showIcon]="true" inputId="icon" dateFormat="yy-mm-dd" class="p-inputtext-sm"></p-calendar>
+									</div>
+									
+									<div class="p-field p-col-12 p-md-4">
+										<label for="firstname6">Vaccine Administrating Site</label>
+										<p-dropdown inputId="state" [options]="site_item" [(ngModel)]="selectedSite" class="p-inputtext-sm" [ngModelOptions]="{standalone: true}" placeholder="Select site"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Vaccine Series Complete</label>
+										<p-selectButton [options]="series_item" [(ngModel)]="selectedSeries" class="p-inputtext-sm" [ngModelOptions]="{standalone: true}"></p-selectButton>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Respoinsible Organization</label>
+										<input id="lastname6" type="text" pInputText class="p-inputtext-sm">
+									</div>
+								</div>
+							</div>
+							<!--end: Form Wizard Step 2-->
+
+							<!--begin: Form Wizard Step 3-->
+							<div class="pb-5" data-wizard-type="step-content">
+								<h4 class="mb-10 font-weight-bold text-dark">Enter Administration Detail</h4>
+								<!-- <div class="form-group">
+									<label>Delivery Type</label>
+									<select name="delivery" [(ngModel)]="model.delivery" class="form-control">
+										<option value="">Select a Service Type Option</option>
+										<option value="overnight" selected>Overnight Delivery (within 48 hours)</option>
+										<option value="express">Express Delivery (within 5 working days)</option>
+										<option value="basic">Basic Delivery (within 5 - 10 working days)</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Packaging Type</label>
+									<select name="packaging" [(ngModel)]="model.packaging" class="form-control">
+										<option value="">Select a Packaging Type Option</option>
+										<option value="regular" selected>Regular Packaging</option>
+										<option value="oversized">Oversized Packaging</option>
+										<option value="fragile">Fragile Packaging</option>
+										<option value="frozen">Frozen Packaging</option>
+									</select>
+								</div>
+								<div class="form-group">
+									<label>Preferred Delivery Window</label>
+									<select name="preferreddelivery" [(ngModel)]="model.preferreddelivery" class="form-control">
+										<option value="">Select a Preferred Delivery Option</option>
+										<option value="morning" selected>Morning Delivery (8:00AM - 11:00AM)</option>
+										<option value="afternoon">Afternoon Delivery (11:00AM - 3:00PM)</option>
+										<option value="evening">Evening Delivery (3:00PM - 7:00PM)</option>
+									</select>
+								</div> -->
+								<div class="p-fluid p-formgrid p-grid">
+									<div class="p-field p-col-12 p-md-4">
+										<label for="firstname6"> Administered Name</label>
+										<input id="lastname6" type="text" pInputText class="p-inputtext-sm">
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">VTrckS provider PIN</label>
+										<input id="lastname6" type="text" pInputText class="p-inputtext-sm">
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Location type</label>
+										<p-dropdown inputId="state" [options]="location_item" class="p-inputtext-sm" [(ngModel)]="selectedLocation" [ngModelOptions]="{standalone: true}" placeholder="Select location type"></p-dropdown>
+									</div>
+									
+									<div class="p-field p-col-12 p-md-4">
+										<label for="firstname6">Address street 1</label>
+										<input id="firstname6" type="text" pInputText class="p-inputtext-sm"> 
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Address street 2</label>
+										<input id="lastname6" type="text" pInputText class="p-inputtext-sm"> 
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Zip code</label>
+										<p-inputMask mask="99999?99999" maxlength="10" pattern class="p-inputtext-sm"></p-inputMask>
+									</div>
+							
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Country</label>
+										<p-dropdown inputId="state" [options]="country_item" class="p-inputtext-sm" [(ngModel)]="selectedCountry" [ngModelOptions]="{standalone: true}" placeholder="Select Country"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">State</label>
+										<p-dropdown inputId="state" [options]="state_item" class="p-inputtext-sm" [(ngModel)]="selectedState" [ngModelOptions]="{standalone: true}" placeholder="Select State"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">City</label>
+										<p-dropdown inputId="state" [options]="city_item" class="p-inputtext-sm" [(ngModel)]="selectedCity" [ngModelOptions]="{standalone: true}" placeholder="Select City"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Vaccine provider suffix</label>
+										<p-dropdown inputId="state" [options]="provider_item" class="p-inputtext-sm" [(ngModel)]="selectedProvider" [ngModelOptions]="{standalone: true}" placeholder="Select Provider Suffix"></p-dropdown>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6"> Vaccination refusal</label>
+										<p-selectButton [options]="refusal_item" class="p-inputtext-sm" [(ngModel)]="selectedRefusal" [ngModelOptions]="{standalone: true}"></p-selectButton>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6"> Comorbidity status</label>
+										<p-selectButton [options]="comorbidity_item" class="p-inputtext-sm" [(ngModel)]="selectedComorbidity" [ngModelOptions]="{standalone: true}"></p-selectButton>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Missed vaccination appointment</label>
+										<p-selectButton [options]="missed_item" class="p-inputtext-sm" [(ngModel)]="selectedMissed" [ngModelOptions]="{standalone: true}"></p-selectButton>
+									</div>
+									<div class="p-field p-col-12 p-md-4">
+										<label for="lastname6">Serology result</label>
+										<p-selectButton [options]="serology_item" class="p-inputtext-sm" [(ngModel)]="selectedSerology"[ngModelOptions]="{standalone: true}" ></p-selectButton>
+									</div>
+								</div>
+							</div>
+							<!--begin: Form Actions -->
+							<div class="d-flex justify-content-between border-top pt-10">
+								<div class="mr-2">
+									<div class="btn btn-light-primary font-weight-bold text-uppercase px-9 py-4" data-wizard-type="action-prev">
+										Previous
+									</div>
+								</div>
+								<div>
+									<div (click)="onSubmit()" class="btn btn-success font-weight-bold text-uppercase px-9 py-4" data-wizard-type="action-submit">
+										Submit
+									</div>
+									<div class="btn btn-primary font-weight-bold text-uppercase px-9 py-4" data-wizard-type="action-next">
+										Next Step
+									</div>
+								</div>
+							</div>
+							<!--end: Form Actions -->
+						</form>
+						<!--end: Form Wizard Form-->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--end: Wizard -->
+
+	</kt-portlet-body>
+</kt-portlet>
