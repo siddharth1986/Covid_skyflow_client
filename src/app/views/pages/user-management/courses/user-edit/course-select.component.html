@@ -38,7 +38,7 @@
 						<td>{{course.batch_id}}</td>
 						<td>{{course.no_of_records}}</td>
 						<td style="text-align: center;">{{course.source_name}}</td>
-						<td style="text-align: center;"><p-tag [styleClass]="course.lpStatus === 'SUCCESS' ? 'p-mr-2 doneTag' : 'p-mr-2 errorTag'" [value]="course.status"></p-tag></td>
+						<td style="text-align: center;"><p-tag [styleClass]="course.status === 'SUCCESS' ? 'p-mr-2 doneTag' : 'p-mr-2 errorTag'" [value]="course.status"></p-tag></td>
 						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.upload_start_at}}</td>
 						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.upload_end_at}}</td>
 						<td><button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded"></button>
@@ -99,9 +99,7 @@
 					<!-- <p-tag styleClass="p-mr-2 inActiveTag" value="0"></p-tag> -->
 					<!-- <i class="pi pi-file-excel"></i> -->
 				</ng-template>
-				<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
-					cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-					Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>   
+				<p>Last processed 16 records on march 4th 2021 9:22am PST.</p>   
 			</p-tabPanel>
 		</p-tabView>
 	</kt-portlet-body>

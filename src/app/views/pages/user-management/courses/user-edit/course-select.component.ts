@@ -54,13 +54,13 @@ export class CourseSelectComponent implements OnInit {
 		this.dataSources = [{
 			id: 1,
 			name: 'HIPAA Data Vault',
-			location: 'Huwaii',
+			location: 'Phoenix',
 			frequency: 'Every 4 hour', // Administrator
 			noOfRecords: '2K'
 		},{
 			id: 2,
-			name: 'Dept. Of Health',
-			location: 'New York',
+			name: 'State Dept. Of Health',
+			location: 'Hawaii',
 			frequency: 'Every 3 hour', // Administrator
 			noOfRecords: '1K'
 		},{
@@ -94,7 +94,7 @@ export class CourseSelectComponent implements OnInit {
 
 		this.courses = [{
 			id: 1,
-			coursesCode: 'HealthCert-PCR',
+			coursesCode: 'Covid19-VAX-Check',
 			coursesName: 'Vax Check ETL Result page',
 			pendingActions: 0, // Administrator
 			totalIssued: 1,

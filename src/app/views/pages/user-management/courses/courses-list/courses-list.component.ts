@@ -46,7 +46,7 @@ export class CoursesListComponent implements OnInit {
 
 		this.courses = [{
 			id: 1,
-			coursesCode: 'HealthCert-PCR',
+			coursesCode: 'Covid19-VAX-Check',
 			coursesName: 'Vax Check ETL Result page',
 			pendingActions: 0, // Administrator
 			totalIssued: 1,
