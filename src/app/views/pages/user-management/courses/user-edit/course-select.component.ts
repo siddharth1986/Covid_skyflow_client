@@ -9,12 +9,14 @@ import { AppState } from '../../../../../core/reducers';
 // Layout
 import { SubheaderService, LayoutConfigService } from '../../../../../core/_base/layout';
 import { LayoutUtilsService, MessageType } from '../../../../../core/_base/crud';
+import { CommonService } from './common.service';
 
 @Component({
 	selector: 'kt-course-select',
 	templateUrl: './course-select.component.html',
 	styleUrls: ['../../courses.component.scss'],
-	encapsulation: ViewEncapsulation.None
+	encapsulation: ViewEncapsulation.None,
+	providers: [CommonService]
 })
 export class CourseSelectComponent implements OnInit {
 	courses: any[];
@@ -23,7 +25,7 @@ export class CourseSelectComponent implements OnInit {
 
 	dsCols: any[];
 	dataSources: any[];
-	constructor() { }
+	constructor(private commonService: CommonService) { }
 
 	/**
 	 * @ Lifecycle sequences => https://angular.io/guide/lifecycle-hooks
@@ -34,12 +36,12 @@ export class CourseSelectComponent implements OnInit {
 	 */
 	ngOnInit() {
 		this.cols = [
-			{ field: 'loadPlanName', header: 'Load Plan Name', textAlign: 'left', width: '17%' },
-			{ field: 'loadPlanInstance', header: 'Load Plan Instance', textAlign: 'left', width: '' },
-			{ field: 'lpStartDate', header: 'LP Start Date', textAlign: 'center', width: '15%' },
-			{ field: 'lpEndDate', header: 'LP end Date', textAlign: 'center', width: '15%' },
-			{ field: 'lpStatus', header: 'LP Status', textAlign: 'center', width: '' },
-			{ field: 'lpDuration', header: 'LP Duration', textAlign: 'center', width: '18%' }
+			{ field: 'batch_id', header: 'Batch ID', textAlign: 'left', width: '17%' },
+			{ field: 'no_of_records', header: 'No of records', textAlign: 'left', width: '' },
+			{ field: 'source_name', header: 'LP Start Date', textAlign: 'center', width: '15%' },
+			{ field: 'status', header: 'LP Status', textAlign: 'center', width: '' },
+			{ field: 'upload_start_at', header: 'LP end Date', textAlign: 'center', width: '15%' },
+			{ field: 'upload_end_at', header: 'LP Duration', textAlign: 'center', width: '18%' }
 		];
 
 		this.dsCols = [
@@ -69,16 +71,16 @@ export class CourseSelectComponent implements OnInit {
 			noOfRecords: '1.4K'
 		}
 	]
-
-		this.batches = [{
-			id: 1,
-			loadPlanName: 'HIR Custom Load Plan',
-			loadPlanInstance: 'Batch - 123',
-			lpStartDate: '20-Jan-21 03:21:46', // Administrator
-			lpEndDate: '20-Sep-21 03:41:26',
-			lpStatus: 'Done',
-			lpDuration: '0Hrs 20mins 30Sec'
-		}]
+	this.getMetaData();
+		// this.batches = [{
+		// 	id: 1,
+		// 	loadPlanName: 'HIR Custom Load Plan',
+		// 	loadPlanInstance: 'Batch - 123',
+		// 	lpStartDate: '20-Jan-21 03:21:46', // Administrator
+		// 	lpEndDate: '20-Sep-21 03:41:26',
+		// 	lpStatus: 'Done',
+		// 	lpDuration: '0Hrs 20mins 30Sec'
+		// }]
 
 		this.courses = [{
 			id: 1,
@@ -97,5 +99,10 @@ export class CourseSelectComponent implements OnInit {
 			lastUpdated: '2d ago',
 		}]
 	}
-
+	getMetaData() {
+		this.commonService.getMetadata().subscribe(data => {
+			console.log("data:", data.response)
+			this.batches = data.response
+		})
+	}
 }
