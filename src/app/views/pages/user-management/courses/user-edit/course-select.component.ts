@@ -38,10 +38,10 @@ export class CourseSelectComponent implements OnInit {
 		this.cols = [
 			{ field: 'batch_id', header: 'Batch ID', textAlign: 'left', width: '17%' },
 			{ field: 'no_of_records', header: 'No of records', textAlign: 'left', width: '' },
-			{ field: 'source_name', header: 'LP Start Date', textAlign: 'center', width: '15%' },
+			{ field: 'source_name', header: 'Source Name', textAlign: 'center', width: '15%' },
 			{ field: 'status', header: 'LP Status', textAlign: 'center', width: '' },
-			{ field: 'upload_start_at', header: 'LP end Date', textAlign: 'center', width: '15%' },
-			{ field: 'upload_end_at', header: 'LP Duration', textAlign: 'center', width: '18%' }
+			{ field: 'upload_start_at', header: 'LP Start Date', textAlign: 'center', width: '15%' },
+			{ field: 'upload_end_at', header: 'LP End Date', textAlign: 'center', width: '18%' }
 		];
 
 		this.dsCols = [
@@ -72,6 +72,15 @@ export class CourseSelectComponent implements OnInit {
 		}
 	]
 	this.getMetaData();
+	this.batches = [{
+		id: 1,
+		batch_id: '3ZPnCrawgzghXZiYp',
+		no_of_records: '1',
+		source_name: 'Dept. of Health', // Administrator
+		status: 'SUCCESS',
+		upload_start_at: '2021-03-03T16:08:03.603Z',
+		upload_end_at: '2021-03-03T16:08:06.707Z'
+	}]
 		// this.batches = [{
 		// 	id: 1,
 		// 	loadPlanName: 'HIR Custom Load Plan',
@@ -81,6 +90,7 @@ export class CourseSelectComponent implements OnInit {
 		// 	lpStatus: 'Done',
 		// 	lpDuration: '0Hrs 20mins 30Sec'
 		// }]
+
 
 		this.courses = [{
 			id: 1,
@@ -99,10 +109,19 @@ export class CourseSelectComponent implements OnInit {
 			lastUpdated: '2d ago',
 		}]
 	}
+	handleChange(e){
+		this.getMetaData()
+	}
+	handleClick(e){
+		console.log('in handle click')
+		this.getMetaData()
+	}
 	getMetaData() {
+		console.log('in get meata data')
 		this.commonService.getMetadata().subscribe(data => {
+			this.batches = []
 			console.log("data:", data.response)
-			this.batches = data.response
+			this.batches = [...data.response]
 		})
 	}
 }

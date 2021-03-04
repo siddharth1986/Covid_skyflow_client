@@ -13,8 +13,9 @@
 
 	<kt-portlet-body>
 		<p-tabView >
-			<p-tabPanel>
+			<p-tabPanel (onChange)="handleChange($event)">
 				<ng-template pTemplate = "header">
+					<!-- <p-button pRipple icon="pi pi-refresh" (onClick)="handleClick($event)" class="p-button-rounded"></p-button> -->
 					<button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded" (click)="getMetaData()"></button> &nbsp;
 					<span>Batch Monitoring</span> &nbsp;
 					<p-tag styleClass="p-mr-2 activeTag" value="1"></p-tag>
@@ -34,12 +35,12 @@
 				</ng-template>
 				<ng-template pTemplate="body" let-course>
 					<tr>
-						<td>{{course.loadPlanName}}</td>
-						<td>{{course.loadPlanInstance}}</td>
-						<td style="text-align: center;">{{course.lpStartDate}}</td>
-						<td style="text-align: center;">{{course.lpEndDate}}</td>
-						<td style="text-align: center;"><p-tag [styleClass]="course.lpStatus === 'Done' ? 'p-mr-2 doneTag' : 'p-mr-2 errorTag'" [value]="course.lpStatus"></p-tag></td>
-						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.lpDuration}}</td>
+						<td>{{course.batch_id}}</td>
+						<td>{{course.no_of_records}}</td>
+						<td style="text-align: center;">{{course.source_name}}</td>
+						<td style="text-align: center;"><p-tag [styleClass]="course.lpStatus === 'SUCCESS' ? 'p-mr-2 doneTag' : 'p-mr-2 errorTag'" [value]="course.status"></p-tag></td>
+						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.upload_start_at}}</td>
+						<td style="text-align: center;"><i class="pi pi-clock" style="color: black;"></i> &nbsp; {{course.upload_end_at}}</td>
 						<td><button pButton pRipple type="button" icon="pi pi-refresh" class="p-button-rounded"></button>
 							<!-- <button pButton type="button" class="p-button-secondary" icon="pi pi-refresh"></button> -->
 						</td>

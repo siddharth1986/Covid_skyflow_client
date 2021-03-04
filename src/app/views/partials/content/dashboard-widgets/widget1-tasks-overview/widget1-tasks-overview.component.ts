@@ -50,7 +50,7 @@ export class Widget1TasksOverviewComponent {
         height: 130,
         type: "radialBar",
       },
-      series: [67],
+      series: [100],
       // colors: ["#20E647"],
       plotOptions: {
         radialBar: {
@@ -93,7 +93,7 @@ export class Widget1TasksOverviewComponent {
         height: 130,
         type: "radialBar",
       },
-      series: [80],
+      series: [20],
       // colors: ["#20E647"],
       plotOptions: {
         radialBar: {
@@ -136,7 +136,7 @@ export class Widget1TasksOverviewComponent {
         height: 130,
         type: "radialBar",
       },
-      series: [27],
+      series: [0],
       // colors: ["#20E647"],
       plotOptions: {
         radialBar: {

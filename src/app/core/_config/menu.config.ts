@@ -67,7 +67,7 @@ export class MenuConfig {
         },
         {section: 'Applications'},
         {
-          title: 'Course Management',
+          title: 'Immunization Management',
           root: true,
           bullet: 'dot',
           icon: 'flaticon2-user-outline-symbol',
