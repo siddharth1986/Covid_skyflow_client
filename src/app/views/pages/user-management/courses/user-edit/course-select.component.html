@@ -59,8 +59,7 @@
 				<p-table #dt1  [columns]="dsCols" [value]="dataSources" sortMode="multiple" 
 				[rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50,100]" styleClass="p-datatable-sm"
 				[rowHover]="true" [paginator]="true" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-				[globalFilterFields]="['courseCode','courseName','lastUpdated']"
-				(onRowSelect)="editUser($event)">
+				[globalFilterFields]="['courseCode','courseName','lastUpdated']">
 				<ng-template pTemplate="header" let-columns>
 					<tr>
 						<th [pSortableColumn]="col.field" *ngFor="let col of columns" [ngStyle]="{'text-align': col.textAlign, 'width': col.width}">

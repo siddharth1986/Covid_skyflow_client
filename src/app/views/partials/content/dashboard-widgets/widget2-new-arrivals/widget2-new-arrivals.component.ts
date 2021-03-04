@@ -42,11 +42,11 @@ export class Widget2NewArrivalsComponent {
       series: [
         {
           name: "Pass",
-          data: [44, 55, 41, 37, 22, 43, 21],
+          data: [44, 55, 41, 37, 22, 43, 21, 30],
         },
         {
           name: "Fail",
-          data: [53, 32, 33, 52, 13, 43, 32]
+          data: [53, 32, 33, 52, 13, 43, 32, 21]
         }
       ],
       // colors: ['#234', '#FFF'],
@@ -77,7 +77,7 @@ export class Widget2NewArrivalsComponent {
         text: "Execution Time"
       },
       xaxis: {
-        categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014],
+        categories: ['March 2th 6am', 'March 2th 2pm', 'March 2th 10pm', 'March 3th 6am', 'March 3th 2pm', 'March 3th 10pm', 'March 4th 6am', 'March 4th 2pm'],
         labels: {
           formatter: function(val) {
             // return val + "K";
