@@ -25,6 +25,8 @@ export class Subheader1Component implements OnInit, OnDestroy, AfterViewInit {
   title = '';
   desc = '';
   breadcrumbs: Breadcrumb[] = [];
+  currentDate = new Date();
+  
 
   // Private properties
   private subscriptions: Subscription[] = [];

@@ -36,12 +36,12 @@ export class CourseSelectComponent implements OnInit {
 	 */
 	ngOnInit() {
 		this.cols = [
-			{ field: 'batch_id', header: 'Batch ID', textAlign: 'left', width: '17%' },
-			{ field: 'no_of_records', header: 'No of records', textAlign: 'left', width: '' },
-			{ field: 'source_name', header: 'Source Name', textAlign: 'center', width: '15%' },
-			{ field: 'status', header: 'LP Status', textAlign: 'center', width: '' },
-			{ field: 'upload_start_at', header: 'LP Start Date', textAlign: 'center', width: '15%' },
-			{ field: 'upload_end_at', header: 'LP End Date', textAlign: 'center', width: '18%' }
+			{ field: 'batch_id', header: 'Batch ID', textAlign: 'left', width: '' },
+			{ field: 'no_of_records', header: 'No of records', textAlign: 'left', width: '14%' },
+			{ field: 'source_name', header: 'Source Name', textAlign: 'center', width: '' },
+			{ field: 'status', header: 'LP Status', textAlign: 'center', width: '10%' },
+			{ field: 'upload_start_at', header: 'LP Start Date', textAlign: 'center', width: '' },
+			{ field: 'upload_end_at', header: 'LP End Date', textAlign: 'center', width: '' }
 		];
 
 		this.dsCols = [
@@ -63,13 +63,14 @@ export class CourseSelectComponent implements OnInit {
 			location: 'Hawaii',
 			frequency: 'Every 3 hour', // Administrator
 			noOfRecords: '1K'
-		},{
-			id: 2,
-			name: 'Safe Travels',
-			location: 'Houston',
-			frequency: 'Every 1 hour', // Administrator
-			noOfRecords: '1.4K'
 		}
+		// ,{
+		// 	id: 2,
+		// 	name: 'Safe Travels',
+		// 	location: 'Houston',
+		// 	frequency: 'Every 1 hour', // Administrator
+		// 	noOfRecords: '1.4K'
+		// }
 	]
 	this.getMetaData();
 	this.batches = [{
