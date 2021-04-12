@@ -35,7 +35,12 @@ export type ChartOptions = {
   styleUrls: ['dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  yesterday: any;
+
   ngOnInit(): void {
-    
+    const today = new Date()
+    this.yesterday = new Date(today)
+
+    this.yesterday.setDate(this.yesterday.getDate() - 1)
   }
 }

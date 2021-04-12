@@ -101,7 +101,8 @@ export class Widget2NewArrivalsComponent {
       fill: {
         opacity: 1,
         // colors: ['#70db70', '#ff8566']
-        colors: ['#7abbfd', '#0288d1']
+        // colors: ['#7abbfd', '#0288d1']
+        colors: ['#7abbfd', '#dd6461'] //changed to maroon for fail data
       },
       legend: {
         position: "top",
@@ -112,7 +113,7 @@ export class Widget2NewArrivalsComponent {
           useSeriesColors: false
         },
         markers: {
-          fillColors: ['#7abbfd', '#0288d1']
+          fillColors: ['#7abbfd', '#dd6461'] // change to maroon for fail data
         }
       }
     };
